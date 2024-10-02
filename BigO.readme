@@ -1,0 +1,101 @@
+Big-O Notation: Understanding Time and Space Complexity
+
+Big-O notation is a mathematical concept used to describe the efficiency of algorithms, particularly how they scale with input size. It gives you an upper bound on the time (or space) an algorithm may take as the input size increases.
+
+Why is Big-O Important?
+
+    Helps compare algorithms based on performance.
+    Understands how an algorithm behaves with large datasets.
+    Optimize code to run more efficiently.
+
+Types of Complexities :
+
+    Time Complexity: Measures how the runtime of an algorithm changes with the input size (n).
+    Space Complexity: Measures how much extra memory the algorithm uses as the input size grows.
+
+Common Big-O Notations
+
+    Notation    Name                Description
+
+    O(1)        Constant Time       The operation takes the same time regardless of the input size.
+    O(log n)    Logarithmic Time    The time grows logarithmically with input size (e.g., binary search).
+    O(n)        Linear Time         Time grows linearly with the input size (e.g., a single loop through n items).
+    O(n log n)  Log-Linear          Time Time grows in n log n proportion (e.g., merge sort).
+    O(n²)       Quadratic Time      Time grows quadratically with input size (e.g., nested loops).
+    O(2ⁿ)       Exponential Time    Time doubles with each additional input (e.g., recursive algorithms).
+
+Time Complexity Example :
+
+    Example 1: O(1) (Constant Time)
+    function getFirstElement(arr) {
+        return arr[0];
+    }
+    No matter how big the array is, accessing the first element always takes the same amount of time.
+
+    Example 2: O(n) (Linear Time)
+    function printElements(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+    }
+    Here, the time increases proportionally with the size of the input array. If the array has 5 elements, it loops 5 times.
+
+Diagram:
+
+| Input Size (n) | Time Taken |
+| -------------- | ---------- |
+| 1              | 1 step     |
+| 2              | 2 steps    |
+| 3              | 3 steps    |
+| ...            | ...        |
+
+Example 3: O(n²) (Quadratic Time)
+
+    function printPairs(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+            console.log(arr[i], arr[j]);
+            }
+        }
+    }
+    In this example, for each element, we loop through all elements again, leading to n × n operations, or O(n²).
+
+Diagram:
+
+| Input Size (n) | Time Taken |
+| -------------- | ---------- |
+| 1              | 1 step     |
+| 2              | 4 steps    |
+| 3              | 9 steps    |
+| ...            | ...        |
+
+Space Complexity Example:
+
+    O(1): No matter the size of the input, the algorithm uses a fixed amount of memory.
+    function add(a, b) {
+        return a + b;
+    }
+
+O(n): The algorithm requires space proportional to the input size.
+
+function createArray(n) {
+let arr = [];
+for (let i = 0; i < n; i++) {
+arr.push(i);
+}
+return arr;
+}
+
+Visualization of Time Complexities
+
+    Complexity      Visualization
+    O(1) ────────── Constant
+    O(log n)        ⋀ Logarithmic
+    O(n)            / Linear
+    O(n log n)      /⋀ Log-Linear
+    O(n²)           / Quadratic
+    O(2ⁿ)           Steep curve
+
+Conclusion
+
+    Big-O notation helps you understand how efficiently an algorithm will run as the input size grows. When designing or choosing algorithms, knowing the time and space complexity gives you a good indication of whether the algorithm will scale well.

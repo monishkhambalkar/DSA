@@ -110,12 +110,52 @@ function reverseArrayWithFor(arr) {
 
 console.log(reverseArrayWithFor([1, 2, 3, 4]));
 
-function reverseArrayWithFor(arr) {
-  let reverseArr = [];
-  for (var i = arr.length - 1; i >= 0; i--) {
-    reverseArr.push(arr[i]);
+function reverseArrayDefaultFun(arr) {
+  return arr.reverse();
+}
+console.log(reverseArrayDefaultFun([1, 2, 3, 4]));
+
+function reverseArrayWithWhile(arr) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left < right) {
+    [arr[left], arr[right]] = [arr[right], arr[left]];
+    console.log(arr[left]);
+    left++;
+    right--;
   }
-  return reverseArr;
+  return arr;
 }
 
-console.log(reverseArrayWithFor([1, 2, 3, 4]));
+console.log(reverseArrayWithWhile([1, 2, 3, 4]));
+
+// 4. Find the Second Largest Element
+
+function secondLargestTimeTaking(arr) {
+  let continues = true;
+  while (continues) {
+    continues = false;
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        let temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+        git;
+        continues = true;
+      }
+    }
+  }
+
+  let sortedArray = [];
+  for (item of arr) {
+    if (!sortedArray.includes(item)) {
+      sortedArray.push(item);
+    }
+  }
+
+  return sortedArray[sortedArray.length - 2];
+}
+
+console.log(secondLargestTimeTaking([2, 3, 6, 6, 5]));
+
+// https://chatgpt.com/c/67056bb0-9100-8003-a2b7-28bac89f9bd7

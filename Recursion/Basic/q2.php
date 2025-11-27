@@ -12,7 +12,7 @@ function sumNumber($n){
 echo sumNumber(5);
 echo "\n";
 
-
+// Write a recursive function to calculate factorial of a number N (N!).
 function Number($n){
     if ($n == 1 || $n == 0) {
         return 1;

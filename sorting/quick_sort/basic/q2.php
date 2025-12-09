@@ -24,6 +24,6 @@ function quickSortStrings(array $arr) : array{
 }
 
 
-$arr =  ["banana", "apple", "mango", "cherry", "blueberry"];;
+$arr =  ["banana", "apple", "mango", "cherry", "blueberry"];
 $sorted = quickSortStrings($arr);
 print_r($sorted);

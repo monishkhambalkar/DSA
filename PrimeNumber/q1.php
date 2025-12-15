@@ -9,4 +9,4 @@ function getPrimeNumber(){
 
 }
 
-print_r(getPrimeNumber())
+print_r(getPrimeNumber());

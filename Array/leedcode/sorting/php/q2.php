@@ -31,8 +31,6 @@ function sortArrayByParityII($nums) {
 
             $even += 2;
             $odd += 2;
-
-            
         }
     }
 

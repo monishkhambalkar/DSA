@@ -1,4 +1,6 @@
-function dog() {
-   console.log("I am a dog.");
-}
-dog.sound = "Bark";
+(function(a){
+ return (function(){
+   console.log(a);
+   a = 6;
+ })()
+})(21);

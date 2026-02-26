@@ -48,10 +48,6 @@ let result = maxSubArray(nums);
 // console.log(result);
 
 
-
-
-
-
 var maxSubArray = function(nums) {
     let maxValSubArray = {};
 

@@ -1,431 +1,416 @@
-// /home/monish/Downloads/ChatGPT Image Jan 30, 2026, 09_51_34 AM.png
-
-// O(1) — Constant Time    
-
-    // Time always same, no matter input size.
-    // 1 element or 1 million → still 1 step.
-
-    // Example: arr[5]
-
-    // 💾 Space:
-        // Usually O(1) space also.
-        // No extra memory based on input size.
-        // 👉 Think: direct access
-        // 📈 Time graph: flat line
-        // 📦 Memory: flat line
-
-    // No loop. No search. No comparison with other elements.
-    // Access by index is always O(1).
-
-    
-// 2. O(log n) — Logarithmic Time 
-
-    // Time:
-        // Each step cuts input in half
-        // Example: Binary Search
-        // 1000 → 500 → 250 → 125 → …
-    
-    // Example: binarySearch(sortedArray)
+/*
 
-    // 💾 Space:
+# 🚀 DSA MASTER PATTERN & ALGORITHM SUMMARY (One-Shot Revision)
 
-        // Iterative → O(1) space
-        // Recursive → O(log n) (call stack)
-        // 👉 Think: divide by 2 every step 
-        // 📈 Time: grows very slowly
-        // 📦 Memory: small stack if recursion
+---
 
-    // O(log n) = “I don’t check everything. I cut the problem in half each step.”
+# 🧠 UNIVERSAL PROBLEM SOLVING BRAIN
 
-    // Example: 
-        // I think of a number between 1 and 1000.
-        // You can only ask: 👉 “Is it higher or lower than X?”
-        // You play like this:
-            // Ask: Is it 500? → No, lower
-            // Ask: Is it 250? → No, higher
-            // Ask: Is it 375? → No, lower
-            // Ask: Is it 312? → Yes!
+When you read ANY question:
 
-    // Example: Real-life Example 2: Finding a name in a phone book
-        // You want to find: “Monish”
-        // You don’t start from A and check one by one ❌
-        // You:
-            // Open in the middle
-            // See “K” → go right
-            // Open middle again
-            // See “R” → go left
-            // Keep halving
+1️⃣ Identify DATA STRUCTURE
+2️⃣ Find SIGNAL WORDS
+3️⃣ Guess PATTERN
+4️⃣ Choose ALGORITHM
+5️⃣ Estimate TIME & SPACE
 
-// 3. O(n) — Linear Time
+---
 
-    // Time:
-        // Goes through every element once
-        // n elements → n steps
+# 🔵 1. TWO POINTER PATTERN
 
-    // Example: for(i=0;i<n;i++)
+## Nature
 
-    // 💾 Space:
-        // If no extra array → O(1)
-        // If you create new array → O(n)
-        // 👉 Think: scan everything
-        // 📈 Time: straight diagonal line
-        // 📦 Memory: depends on if you store data
+Use two positions to reduce nested loops and solve in O(N).
 
-    // O(n) = “I must touch or look at every item once.”
+## Signals
 
-    // Code analogy : for (let i = 0; i < n; i++) {check(arr[i]); }
+* pair
+* sorted array
+* remove duplicates
+* reverse
+* compare from both ends
 
-    // Real-life Example 1: Checking attendance in a class
+## Types
 
-        // Teacher has a list of n students.
-        // To check attendance:
-        // Call each name one by one
-        // Mark present/absent
-        // If:
-        // 10 students → 10 checks
-        // 50 students → 50 checks
-        // 100 students → 100 checks
-        // ⏱️ Work = n times
-        // ✅ O(n)
-        // You must see every student once.
-    
-    // Real-life Example 3: Checking expiry dates on medicine boxes
+1. Opposite direction (left/right)
+2. Same direction (slow/fast)
 
-        // You have n medicine boxes.
-        // To find expired ones:
-        // Check box 1
-        // Check box 2
-        // Check box 3
-        // Check box n
-        // No shortcut.
-        // You must look at every box.
+## Question Types
 
-// 4. O(n log n)
-    
-    // Time:
-        // For each element (n)
-        // you do log n work
+* Two sum (sorted)
+* Remove duplicates
+* Reverse array/string
+* Container with most water
+* Move zeros
+* Middle of linked list
 
-    // Example: Merge Sort, Quick Sort (avg)
+## Complexity
 
-    // 💾 Space:
+Time: O(N)
+Space: O(1)
 
-        // Merge Sort → O(n)
-        // Quick Sort → O(log n) stack
-        // 👉 Think:
-        // “Divide array (log n) AND process all elements (n)”
-        // 📈 Time: steeper than O(n)
-        // 📦 Memory: moderate
+## Mental Idea
 
+Move two positions instead of checking all pairs.
 
+---
 
+# 🟢 2. SLIDING WINDOW PATTERN
 
+## Nature
 
+Maintain a continuous range (window) and expand/shrink dynamically.
 
+## Signals
 
+* longest
+* shortest
+* subarray
+* substring
+* continuous
+* consecutive
 
-        /*
-        
-        
-        
-        2. The Master Thinking Process (Step-by-Step)
+## Question Types
 
-Whenever you see a problem, ask these 5 questions:
+* Longest substring without repeating
+* Max sum subarray
+* Minimum window substring
+* Fixed size K window
+* Fruits into baskets
 
-❓ Q1 — What is the DATA STRUCTURE?
+## Complexity
 
-Look at input:
+Time: O(N)
+Space: O(1) or O(N) (if HashMap used)
 
-Input Type	Possible Direction
-Array / String	Sliding window, Two pointers, Hashing
-Linked List	Two pointer, Reverse, Cycle detection
-Tree	DFS, BFS, Recursion
-Graph	BFS, DFS, Union-Find
-Intervals	Sorting + Merge
+## Mental Idea
 
-➡️ Input structure already gives clue.
+Reuse previous work instead of recalculating.
 
-❓ Q2 — What Operation is Asked?
+---
 
-Read keywords carefully.
+# 🟡 3. HASHMAP / HASHSET PATTERN
 
-Keyword in Question	Pattern
-“Find pair”	Two pointers / HashMap
-“Shortest path”	BFS
-“Maximum / Minimum subarray”	Sliding Window / DP
-“Detect cycle”	Fast & Slow pointer
-“Merge sorted”	Two pointers
-“Nearest / Next greater”	Stack
-❓ Q3 — Brute Force Complexity?
+## Nature
 
-Ask:
+Store memory for fast lookup.
 
-If I do normal looping, what complexity comes?
+## Signals
 
-Example:
+* frequency
+* count
+* duplicate
+* first occurrence
+* lookup fast
+* pairs
 
-Nested loop → O(N²)
+## Question Types
 
-If N can be large:
+* Two sum (unsorted)
+* Contains duplicate
+* Frequency count
+* Anagram checking
+* Longest consecutive sequence
 
-➡️ Interview expects better algorithm.
+## Complexity
 
-❓ Q4 — Is data sorted?
+Time: O(N)
+Space: O(N)
 
-If YES:
+## Mental Idea
 
-➡️ Think immediately:
+Trade memory for speed.
 
-Two pointers
-Binary search
+---
 
-Sorted data = BIG CLUE.
+# 🔗 4. LINKED LIST PATTERN
 
-❓ Q5 — Is question asking FAST solution?
+## Nature
 
-Words like:
+Nodes connected by pointers (not index).
 
-“optimal”
+## Signals
 
-“efficient”
+* linked list input
+* reverse
+* cycle
+* middle
+* kth from end
 
-“O(N) solution?”
+## Algorithms Used
 
-➡️ Means special pattern exists.
+* Two pointer
+* Fast & Slow pointer
+* Pointer manipulation
+* Reverse logic
 
-🔥 3. PATTERN RECOGNITION TABLE (SUPER IMPORTANT)
+## Question Types
 
-This is GOLD. Save this mentally.
+* Reverse linked list
+* Detect cycle
+* Merge lists
+* Delete node
+* Palindrome linked list
 
-🧩 ARRAY / STRING PATTERNS
-Pattern 1 — Two Pointers
+## Complexity
 
-Clues:
+Usually Time: O(N)
+Space: O(1)
 
-Sorted array
+## Mental Idea
 
-Pair sum
+Change connections, not data.
 
-Remove duplicates
+---
 
-Reverse array
+# 📚 5. STACK PATTERN
 
-Example:
+## Nature
 
-find two numbers whose sum = X
+Last In First Out (LIFO).
 
-➡️ Two pointers.
+## Signals
 
-Pattern 2 — Sliding Window
+* nearest greater/smaller
+* balanced brackets
+* undo operation
+* expression evaluation
 
-Clues:
+## Question Types
 
-Subarray
+* Valid parentheses
+* Next greater element
+* Monotonic stack problems
+* Daily temperatures
 
-Substring
+## Complexity
 
-Continuous elements
+Time: O(N)
+Space: O(N)
 
-Longest / shortest window
+## Mental Idea
 
-Example:
+Need previous decisions remembered in order.
 
-longest substring without repeating
+---
 
-➡️ Sliding window.
+# 📥 6. QUEUE PATTERN
 
-Pattern 3 — HashMap / Set
+## Nature
 
-Clues:
+First In First Out (FIFO).
 
-Frequency
+## Signals
 
-Duplicate
+* level by level
+* order processing
+* scheduling
+* BFS
 
-Fast lookup
+## Question Types
 
-Example:
+* BFS traversal
+* Level order traversal
+* Shortest path in unweighted graph
 
-find duplicate numbers
+## Complexity
 
-➡️ HashMap.
+Time: O(N)
+Space: O(N)
 
-🔗 LINKED LIST PATTERNS
-Pattern 1 — Fast & Slow Pointer (VERY IMPORTANT)
+## Mental Idea
 
-Clues:
+Process items in arrival order.
 
-Cycle detection
+---
 
-Middle node
+# 🔍 7. BINARY SEARCH PATTERN
 
-kth from end
+## Nature
 
-Example:
+Search by reducing problem size by half.
 
-detect loop in linked list
+## Signals
 
-➡️ Fast + Slow.
+* sorted array
+* search efficiently
+* minimum/maximum possible answer
 
-Pattern 2 — Pointer Manipulation
+## Question Types
 
-Clues:
+* Search in sorted array
+* First/last occurrence
+* Peak element
+* Search rotated array
+* Answer space search
 
-Reverse list
+## Complexity
 
-Delete node
+Time: O(log N)
+Space: O(1)
 
-Rearrange nodes
+## Mental Idea
 
-➡️ Reverse logic.
+Eliminate half every step.
 
-🌳 TREE PATTERNS
+---
 
-Clues:
+# 🌳 8. DFS (Depth First Search)
 
-Levels
+## Nature
 
-Depth
+Go deep first, then backtrack.
 
-Parent-child
+## Signals
 
-➡️ DFS / BFS.
+* paths
+* depth
+* recursive exploration
+* combinations
 
-📊 INTERVAL PATTERNS
+## Question Types
 
-Clues:
+* Tree traversal
+* Graph traversal
+* Maze paths
+* Backtracking problems
 
-Meeting timings
+## Complexity
 
-Range merging
+Time: O(N)
+Space: O(H) recursion stack
 
-Overlaps
+## Mental Idea
 
-➡️ Sort + Merge.
+Explore deeply before switching path.
 
-🧠 4. REAL INTERVIEW SECRET (VERY VERY IMPORTANT)
+---
 
-Interviewers repeat same patterns.
+# 🌐 9. BFS (Breadth First Search)
 
-Different story.
+## Nature
 
-Same logic.
+Explore level by level.
 
-Example:
+## Signals
 
-Problem A
-find longest substring
-Problem B
-maximum fruits in basket
-Problem C
-max consecutive ones
+* shortest path
+* minimum steps
+* levels
 
-ALL are:
+## Question Types
 
-Sliding Window
-🔥 5. HOW SENIOR ENGINEERS THINK (Mindset)
+* Level order traversal
+* Shortest path (unweighted)
+* Infection spread problems
 
-They don’t think:
+## Complexity
 
-❌ Which algorithm?
+Time: O(N)
+Space: O(N)
 
-They think:
+## Mental Idea
 
-What is changing while I move forward?
+Expand layer by layer.
 
-If window moves → Sliding window
-If two ends move → Two pointers
-If memory needed → HashMap
+---
 
-🚨 6. BIGGEST MISTAKE STUDENTS MAKE
+# 🔁 10. RECURSION
 
-They try:
+## Nature
 
-“Which algorithm should I apply?”
+Function solves smaller version of itself.
 
-Wrong approach.
+## Signals
 
-Correct approach:
+* divide into smaller problems
+* tree-like decisions
 
-“What behaviour is problem describing?”
+## Question Types
 
-🧩 7. Real Example (Let’s Practice)
+* Factorial
+* Tree traversal
+* Backtracking base
 
-Problem:
+## Complexity
 
-Find middle node of linked list
+Depends on calls
 
-Think:
+Space:
+Recursion stack (important).
 
-Need middle
+## Mental Idea
 
-Can’t count length every time
+Trust smaller problem result.
 
-Two speeds possible
+---
 
-➡️ Fast & Slow Pointer.
+# 🧩 11. BACKTRACKING
 
-🚀 8. The 80/20 Rule (SUPER IMPORTANT)
+## Nature
 
-70% interview questions come from:
+Try → Explore → Undo → Try another path.
 
-Pattern	Importance
-Two Pointer	⭐⭐⭐⭐⭐
-Sliding Window	⭐⭐⭐⭐⭐
-HashMap	⭐⭐⭐⭐⭐
-Fast & Slow Pointer	⭐⭐⭐⭐
-Binary Search	⭐⭐⭐⭐
-DFS/BFS	⭐⭐⭐⭐
+## Signals
 
-Master these → big success.
+* all combinations
+* all possible ways
+* permutations
+* subsets
 
-🧠 9. Ultimate Trick (POWERFUL)
+## Question Types
 
-When stuck:
+* N-Queens
+* Subsets
+* Permutations
+* Sudoku solver
 
-Ask yourself:
+## Complexity
 
-Can I solve this while moving once from left → right?
+Usually exponential:
+O(2^N) or O(N!)
 
-If YES:
+Space:
+O(N) recursion depth
 
-➡️ O(N) pattern exists.
+## Mental Idea
 
-🔥 10. YOUR PERSONAL ROADMAP (Based on you)
+Decision tree exploration.
 
-Since you are:
+---
 
-Learning Linked List deeply
+# 🧠 MASTER PATTERN DETECTION TABLE
 
-Targeting strong DSA
+| Signal                      | Pattern              |
+| --------------------------- | -------------------- |
+| pair / sorted               | Two pointers         |
+| longest/shortest continuous | Sliding window       |
+| count / frequency           | HashMap              |
+| linked list                 | Pointer manipulation |
+| nearest greater             | Stack                |
+| level / minimum steps       | BFS                  |
+| depth / paths               | DFS                  |
+| sorted search               | Binary Search        |
+| all possibilities           | Backtracking         |
 
-Your next learning order should be:
+---
 
-1️⃣ Two Pointer mastery
-2️⃣ Fast & Slow pointer
-3️⃣ Sliding Window
-4️⃣ HashMap patterns
-5️⃣ Stack patterns
-        
-        */
+# ⚡ TIME vs SPACE QUICK RULE
 
+1. First solve correctly
+2. Then optimize time
+3. Then reduce space
 
+Most interviews prefer better TIME first.
 
+---
 
-1️⃣ Is data sorted?
-   → Two pointers / Binary search
+# 🎯 GOLDEN RULE (Never Forget)
 
-2️⃣ Is it continuous range?
-   → Sliding window
+Same pattern → different story.
 
-3️⃣ Need fast lookup?
-   → HashMap
+You are not solving new problems.
+You are recognizing patterns.
 
-4️⃣ Linked list?
-   → Two pointers / reverse
-
-5️⃣ Tree levels?
-   → BFS
-
-6️⃣ Depth / path?
-   → DFS
+---
+*/

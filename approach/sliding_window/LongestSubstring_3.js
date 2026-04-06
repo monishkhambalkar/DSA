@@ -5,10 +5,18 @@ function getLongestSubString(s){
     let left = 0;
     for(let right = 0; right < s.length; right++){
         while(set.has(s[right])){
+            console.log("Set ", set)
             set.delete(s[left]);
+            console.log("Set ", set)
             left++;
         }
         set.add(s[right]);
+
+        console.log(max, right, left)
+         console.log(max, right, left + 1)
+        console.log(max, right - left + 1)
+
+        console.log()
         
         max = Math.max(max, right - left + 1);
     }

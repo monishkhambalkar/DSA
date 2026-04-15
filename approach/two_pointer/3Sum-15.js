@@ -25,6 +25,8 @@ function threeSum(nums){
         if (nums[i] + nums[i + 1] + nums[i + 2] > 0) break;
         if (nums[i] + nums[n - 2] + nums[n - 1] < 0) continue;
 
+        let left = i + 1;
+        let right = n - 1;
 
         while(left < right){
             const sum = nums[i] + nums[left] + nums[right];
